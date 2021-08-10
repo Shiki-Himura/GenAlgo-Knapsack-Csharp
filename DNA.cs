@@ -8,6 +8,6 @@ namespace GenAlgo___BackpackAlgo
 {
     class DNA
     {
-        public Gen[] GeneArray { get; set; }
+        public Gen[][] GeneArray { get; set; }
     }
 }

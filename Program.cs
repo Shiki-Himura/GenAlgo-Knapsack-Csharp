@@ -10,6 +10,7 @@ namespace GenAlgo___BackpackAlgo
         static void Main(string[] args)
         {
             List<Gen> DNA_Pool = GetFileData();
+
             CreateGenArray(DNA_Pool);
 
         }
