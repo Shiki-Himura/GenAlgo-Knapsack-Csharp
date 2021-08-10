@@ -10,17 +10,7 @@ namespace GenAlgo___BackpackAlgo
         static void Main(string[] args)
         {
             List<Gen> DNA_Pool = GetFileData();
-            DNA[] DNA_Array = Create_DNA_Array(DNA_Pool);
-        }
-        private static DNA[] Create_DNA_Array(List<Gen> pool)
-        {
-            DNA[] tempdna = new DNA[2000];
 
-            for (int i = 0; i < 2000; i++)
-            {
-                //TODO - Implement function.
-            }
-            return tempdna;
         }
         private static Gen[] CreateGenArray(List<Gen> pool)
         {
