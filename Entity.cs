@@ -24,13 +24,13 @@ namespace GenAlgo___BackpackAlgo
 
         public Gen[] GetContent()
         {
-
+            throw new NotImplementedException();
         }
 
         // constructor
         public Entity(Entity entityA, Entity entityB)
         {
-
+            throw new NotImplementedException();
         }
 
         public Entity(double maxVolume, double maxWeight, Gen[] genList, double mutRate)

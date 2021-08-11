@@ -19,14 +19,14 @@ namespace GenAlgo___BackpackAlgo
 
         // constructor
         public Gen(double volume, double weight, int value, int id,
-                   double percvolume, double percweight)
+                   double totalVolume, double totalWeight)
         {
             Volume = volume;
             Weight = weight;
             Value = value;
             ID = id;
-            VolumePercentage = percvolume;
-            WeightPercentage = percweight;
+            VolumePercentage = totalVolume * (volume / 100);
+            WeightPercentage = totalWeight * (weight / 100);
         }
     }
 }

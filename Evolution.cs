@@ -21,13 +21,14 @@ namespace GenAlgo___BackpackAlgo
 
         private void CreateRngPopulation()
         {
+            // create array - random index of 200 element array, set value from 0 to 1
             Random rng = new Random();
 
         }
 
         private static Gen[] LoadData(string path, double totalVolume, double totalWeight)
         {
-            Gen[] data = new Gen[200];
+            Gen[] data = null;
 
             data = File.ReadAllLines(path)
                 .Select(x => x.Split("\t"))
@@ -37,8 +38,8 @@ namespace GenAlgo___BackpackAlgo
                     int.Parse(gen[1]),
                     int.Parse(gen[2]),
                     index + 1,
-                    double.Parse(gen[0]),
-                    double.Parse(gen[1])
+                    totalVolume,
+                    totalWeight
                 )).ToArray();
             return data;
         }
