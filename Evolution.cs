@@ -19,10 +19,26 @@ namespace GenAlgo___BackpackAlgo
 
         }
 
-        private void CreateRngPopulation()
+        private void CreateRngPopulation(string path, double totalVolume, double totalWeight)
         {
-            // create array - random index of 200 element array, set value from 0 to 1
+            Gen[] data = LoadData(path, totalVolume, totalWeight);
             Random rng = new Random();
+            int[][] pop = new int[2000][];
+            
+            for (int i = 0; i < MaxPopSize; i++)
+            {
+                int[] temp = new int[200];
+                for (int j = 0; j < temp.Length; j++)
+                {
+                    temp[j] = 0;
+                    if (rng.Next(0, 2) == 1)
+                    {
+                        temp[j] = 1;
+                    }
+                }
+                pop[i] = temp;
+            }
+
 
         }
 
@@ -47,10 +63,8 @@ namespace GenAlgo___BackpackAlgo
         // constructor
         public Evolution(string path, double totalVolume, double totalWeight, int popSize, double mutRate)
         {
-            MaxPopSize = popSize;
-            LoadData(path, totalVolume, totalWeight);
-
-            CreateRngPopulation();
+            MaxPopSize = popSize;            
+            CreateRngPopulation(path, totalVolume, totalWeight);
         }
     }
 }
