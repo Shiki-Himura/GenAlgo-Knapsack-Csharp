@@ -8,7 +8,7 @@ namespace GenAlgo___BackpackAlgo
 {
     class Evolution
     {
-        public Entity[] Population { get; set; }
+        public Entity[] Population = new Entity[2000];
         public int MaxPopSize { get; set; }
 
 
@@ -23,9 +23,8 @@ namespace GenAlgo___BackpackAlgo
         {
             Gen[] data = LoadData(path, totalVolume, totalWeight);
             Random rng = new();
+            double popFitSum = 0;
 
-
-            int[][] pop = new int[MaxPopSize][];            
             for (int i = 0; i < MaxPopSize; i++)
             {
                 int[] bitTemp = new int[200];
@@ -33,8 +32,9 @@ namespace GenAlgo___BackpackAlgo
                 {
                     bitTemp[j] = rng.Next(0, 2);
                 }
-                Entity entity = new(totalVolume, totalWeight, data, mutRate, bitTemp);
-                pop[i] = bitTemp;
+                 
+                Population[i] = new Entity(totalVolume, totalWeight, data, mutRate, bitTemp);
+                popFitSum += Population[i].Fitness;
             }
         }
 

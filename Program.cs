@@ -8,8 +8,8 @@ namespace GenAlgo___BackpackAlgo
     class Program
     {
         static readonly string FilePath = "C:/Users/CSL/Desktop/data.csv";
-        static readonly double TotalVolume = 55.0;
-        static readonly double TotalWeight = 78.0;
+        static readonly double TotalVolume = 50.0;
+        static readonly double TotalWeight = 15.0;
         static readonly int PopulationSize = 2000;
         static readonly double MutationRate = 1.0;
 
@@ -19,6 +19,6 @@ namespace GenAlgo___BackpackAlgo
 
             evo.CreateNextGeneration();
 
-        }        
+        }
     }
 }

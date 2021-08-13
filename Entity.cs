@@ -19,28 +19,17 @@ namespace GenAlgo___BackpackAlgo
         // Methods
         private void CalcFitness()
         {
-            double sumWeight = 0;
-            double sumVolume = 0;
-
             for (int i = 0; i < DNA.Length; i++)
             {
-                if (DNA[i] == 1)
+                if (DNA[i] == 1 && RefList[i].Weight < TotalWeight && RefList[i].Volume < TotalVolume)
                 {
-                    sumWeight += RefList[i].WeightPercentage;
-                    sumVolume += RefList[i].VolumePercentage;
+                    Fitness += 0.2;
+                }
+                else
+                {
+                    Fitness -= 0.1;
                 }
             }
-
-            double fitnessA = 0;
-            double fitnessB = 0;
-            double dnaWeight = 100 - sumWeight;
-            double dnaVolume = 100 - sumVolume;
-            if (dnaWeight >= 0 && dnaVolume >= 0)
-            { // finish calculating fitness 
-                fitnessA = ;
-                fitnessB = ;
-            }
-            Fitness = fitnessA + fitnessB;
         }
 
         public Gen[] GetContent()
