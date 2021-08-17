@@ -19,17 +19,25 @@ namespace GenAlgo___BackpackAlgo
         // Methods
         private void CalcFitness()
         {
+            /* sum of percentages as MAX in range 0 to MAX
+               everything above 200% (100% volume, 100% weight) gets punished exponentially harder than if its below
+             */
+            double sumRatio = 0;
             for (int i = 0; i < DNA.Length; i++)
             {
-                if (DNA[i] == 1 && RefList[i].Weight < TotalWeight && RefList[i].Volume < TotalVolume)
+                if (DNA[i] == 1)
                 {
-                    Fitness += 0.2;
-                }
-                else
-                {
-                    Fitness -= 0.1;
+                    sumRatio += RefList[i].Ratio;
+                    sumRatio += RefList[i].VolumePercentage;
+                    sumRatio += RefList[i].WeightPercentage;
                 }
             }
+            double result = sumRatio;
+
+            
+
+
+            Console.WriteLine("Percentage based on 100%: " + Math.Round(result, 2));
         }
 
         public Gen[] GetContent()

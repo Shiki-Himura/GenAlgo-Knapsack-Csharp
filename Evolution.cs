@@ -27,7 +27,7 @@ namespace GenAlgo___BackpackAlgo
 
             for (int i = 0; i < MaxPopSize; i++)
             {
-                int[] bitTemp = new int[200];
+                int[] bitTemp = new int[data.Length];
                 for (int j = 0; j < bitTemp.Length; j++)
                 {
                     bitTemp[j] = rng.Next(0, 2);
@@ -43,7 +43,7 @@ namespace GenAlgo___BackpackAlgo
             Gen[] data = null;
 
             data = File.ReadAllLines(path)
-                .Select(x => x.Split("\t"))
+                .Select(line => line.Split("\t"))
                 .Select((gen, index) => new Gen
                 (
                     int.Parse(gen[0]),
@@ -52,7 +52,10 @@ namespace GenAlgo___BackpackAlgo
                     index + 1,
                     totalVolume,
                     totalWeight
-                )).ToArray();
+                ))
+                .Where(gen => gen.Volume < totalVolume)
+                .Where(gen => gen.Weight < totalWeight)
+                .ToArray();
             return data;
         }
 
