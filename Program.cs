@@ -11,7 +11,7 @@ namespace GenAlgo___BackpackAlgo
         static readonly double TotalVolume = 60.0;
         static readonly double TotalWeight = 60.0;
         static readonly int PopulationSize = 2000;
-        static readonly double MutationRate = 1.0;
+        static readonly double MutationRate = 0.01;
 
         static void Main(string[] args)
         {
@@ -19,7 +19,7 @@ namespace GenAlgo___BackpackAlgo
 
             while (true)
             {
-                evo.CreateNextGeneration();
+                evo.Crossover();
             }
 
         }

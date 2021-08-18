@@ -14,8 +14,16 @@ namespace GenAlgo___BackpackAlgo
 
 
         // Methods
-        public void CreateNextGeneration()
+
+        public void Crossover()
         {
+            int[] temp = new int[MaxPopSize];
+
+            double oldMin = Population.Min(x => x.Fitness);
+            double oldMax = Population.Max(x => x.Fitness);
+
+            double newMin = 1;
+            double newMax = 100;
 
         }
 
@@ -23,7 +31,6 @@ namespace GenAlgo___BackpackAlgo
         {
             Gen[] data = LoadData(path, totalVolume, totalWeight);
             Random rng = new();
-            double popFitSum = 0;
 
             for (int i = 0; i < MaxPopSize; i++)
             {
@@ -34,8 +41,9 @@ namespace GenAlgo___BackpackAlgo
                 }
                  
                 Population[i] = new Entity(totalVolume, totalWeight, data, mutRate, bitTemp);
-                popFitSum += Population[i].Fitness;
             }
+
+            Crossover();
         }
 
         private static Gen[] LoadData(string path, double totalVolume, double totalWeight)

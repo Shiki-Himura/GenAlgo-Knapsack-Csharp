@@ -15,7 +15,6 @@ namespace GenAlgo___BackpackAlgo
         public int ID { get; set; }
         public double VolumePercentage { get; set; }
         public double WeightPercentage { get; set; }
-        public double Ratio { get; set; }
 
 
 
@@ -29,7 +28,6 @@ namespace GenAlgo___BackpackAlgo
             ID = id;
             VolumePercentage = (Volume / totalVolume) * 100;
             WeightPercentage = (Weight / totalWeight) * 100;
-            Ratio = Value / (Volume / totalVolume) / (Weight / totalWeight);
         }
     }
 }
