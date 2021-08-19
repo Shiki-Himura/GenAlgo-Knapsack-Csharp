@@ -7,11 +7,11 @@ namespace GenAlgo___BackpackAlgo
 {
     class Program
     {
-        static readonly string FilePath = "C:/Users/CSL/Desktop/data.csv";
-        static readonly double TotalVolume = 60.0;
-        static readonly double TotalWeight = 60.0;
-        static readonly int PopulationSize = 2000;
-        static readonly double MutationRate = 0.01;
+        static string FilePath = "C:/Users/CSL/Desktop/data.csv";
+        static double TotalVolume = 60.0;
+        static double TotalWeight = 60.0;
+        static int PopulationSize = 2000;
+        static double MutationRate = 0.01;
 
         static void Main(string[] args)
         {
