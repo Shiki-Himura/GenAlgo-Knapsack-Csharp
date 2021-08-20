@@ -21,7 +21,7 @@ namespace GenAlgo___BackpackAlgo
             while (true)
             {
                 evo.Crossover();
-                var best = evo.Population.OrderByDescending(x => x.Fitness).Take(2).ToArray();
+                var best = evo.Population.OrderByDescending(x => x.Fitness).Take(20).ToArray();
 
                 for (int i = 0; i < best.Length; i++)
                 {
