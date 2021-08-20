@@ -9,7 +9,7 @@ namespace GenAlgo___BackpackAlgo
 {
     class Evolution
     {
-        public Entity[] Population = new Entity[2000];
+        public Entity[] Population = new Entity[Helper.Rng.Next(0, 10001)];
         public int MaxPopSize { get; set; }
 
 
