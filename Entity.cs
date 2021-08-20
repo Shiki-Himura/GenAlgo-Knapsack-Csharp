@@ -20,15 +20,8 @@ namespace GenAlgo___BackpackAlgo
 
         // methods
         public void CalcFitness()
-        {            
+        {
             Fitness = 1;
-
-            for (int i = 0; i < DNA.Length; i++)
-            {
-                Console.Write(DNA[i]);
-                
-            }
-            Console.WriteLine();
 
             int lengthDNA = DNA.Length;
             for (int i = 0; i < lengthDNA; i++)
@@ -58,7 +51,8 @@ namespace GenAlgo___BackpackAlgo
             double pWeight = TotalWeight - 100 <= 0 ? TotalWeight * pWeightMultiplier : 100;
 
             Fitness = Score * valueMultiplier + nVolume + nWeight + pVolume + pWeight;
-        }         
+
+        }
 
         public Gen[] GetContent()
         {
@@ -97,6 +91,26 @@ namespace GenAlgo___BackpackAlgo
             CalcFitness();
         }
 
+        public Entity(Gen[] data, double mutationRate)
+        {
+            RefList = data;
+            MutationRate = mutationRate;
+            DNA = new int[RefList.Length];
+            TotalVolume = 0;
+            TotalWeight = 0;
+
+            Fitness = 1;
+
+            while (TotalVolume <= 100 && TotalWeight <= 100)
+            {
+                int dnaIndex = Helper.Rng.Next(0, DNA.Length);
+                DNA[dnaIndex] = 1;
+                TotalWeight += RefList[dnaIndex].WeightPercentage;
+                TotalVolume += RefList[dnaIndex].VolumePercentage;
+            }
+
+            CalcFitness();
+        }
         public Entity(double maxVolume, double maxWeight, Gen[] refList, double mutRate, int[] bitTemp)
         {
             DNA = bitTemp;
