@@ -21,7 +21,7 @@ namespace GenAlgo___BackpackAlgo
         // methods
         public void CalcFitness()
         {
-            Fitness = 1;
+            Fitness = 1;            
 
             int lengthDNA = DNA.Length;
             for (int i = 0; i < lengthDNA; i++)

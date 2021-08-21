@@ -50,35 +50,7 @@ namespace GenAlgo___BackpackAlgo
             }
 
             Population = temp;
-        }
-
-        //public void CreateRngPopulation(string path, double totalVolume, double totalWeight, double mutRate)
-        //{
-        //    Gen[] data = LoadData(path, totalVolume, totalWeight);
-
-        //    for (int i = 0; i < MaxPopSize; i++)
-        //    {
-        //        int[] bitTemp = new int[data.Length];
-
-        //        int lengthTemp = bitTemp.Length;
-        //        for (int j = 0; j < lengthTemp; j++)
-        //        {
-        //            if (Helper.Rng.NextDouble() < 0.1)
-        //            {
-        //                bitTemp[j] = Helper.Rng.Next(0, 2);
-        //            }
-        //            else
-        //            {
-        //                bitTemp[j] = 0;
-        //            }
-        //        }
-
-        //        Population[i] = new Entity(totalVolume, totalWeight, data, mutRate, bitTemp);
-
-        //    }
-
-        //    Crossover();
-        //}
+        }        
 
         public void CreatePopulation(Gen[] data, double mutRate)
         {

@@ -7,7 +7,7 @@ namespace GenAlgo___BackpackAlgo
 {
     class Program
     {
-        static string FilePath = "C:/Users/CSL/Desktop/data2.csv";
+        static string FilePath = "C:/Users/athau/source/repos/Shiki-Himura/GenAlgo---BackpackAlgo-Csharp/Data/data.csv";
         static double TotalVolume = Helper.Rng.Next(0, 1000);
         static double TotalWeight = Helper.Rng.Next(0, 1000);
         static int PopulationSize = 2000;
